@@ -2,29 +2,34 @@
 #include <stdio.h>
 
 void print_array(int* array, unsigned N) {
-	for (unsigned i - 1; i <= N ; i++) {
-		printf("Element %d: %d\n", i, array[i]);
+	for (unsigned i = 1; i <= N ; i++) {
+		printf("Element %d: %d\n", i, array[i-1]);
 	}
 }
 
 void inc_array(int* array, unsigned N) {
-	while (N--)
-		++(*array++);
+	while (N--) {
+		++(*(array++));
+	}
+		
 }
 
 int main() {
 	const unsigned N = 42;
-	int* vec1 = malloc(N);
+	int* vec1 = (int*) malloc(N * sizeof(int));
 
-	for (unsigned i = 1 ; i <= M ; i++) {
-		vec[i] = i;
+	for (unsigned i = 1 ; i <= N ; i++) {
+		vec1[i] = i;
 	}
 
 	print_array(vec1, N);
 
-	int* vec2 = malloc(N);
+	int* vec2 = (int*) malloc(N * sizeof(int));
 
-	vec2 = vec1;
+	//vec2 = vec1;
+	for (unsigned i = 0 ; i < N ; i++) {
+		vec2[i] = vec1[i];
+	}
 
 	free(vec1);
 

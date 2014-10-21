@@ -21,6 +21,14 @@ int main(int argc, char* argv[]) {
 		fraction_reduce(&sum);
 		print_fraction(sum);
 		printf("%f\n", fraction2double(sum));
+
+		free(arr);
+		printf("0x%x\n", arr);
+		arr = (fraction*) malloc(sizeof(fraction) * N);
+		printf("0x%x\n", arr);
+		arr = (fraction*) malloc(sizeof(fraction) * N);
+		printf("0x%x\n", arr);
+		
 	} else {
 		printf("Argument 1 should be a non-negative integer!\n");
 	}
